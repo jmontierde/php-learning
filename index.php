@@ -1,32 +1,41 @@
-<?php
-    echo "Hello World";
+<!DOCTYPE html>
+<html lang="en">
 
-    $color = 'red';
-    $x = 5;
-    $y = 10;
-    // echo "$color";
-    // echo $x + $y;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-
-
-
-    // function test(){ 
-    //     $x = 5; 
+<body>
 
 
-    //     echo "Variable $x";
-    // }
-    // test();
+    <?php
+    $books = [
+        [
+            "author" => "A",
+            "name" => "Rich Dad Poor Dad",
+        ],
+        [
+            "author" => "B",
+            "name" => "The subtle of not giving a fuck",
+        ],
+        [
+            "author" => "C",
+            "name" => "Atomic Habit"
+        ]
 
-    // PHP The global Keyword
-    
-    function mytest(){ 
-        global $x, $y;
-        $y = $x + $y;
-    }   
 
-    mytest();
-    echo "<br>A", $y; // outputs 15
+    ];
+
+    ?>
 
 
-?>
+    <h1>
+        <?php foreach ($books as $book) : ?>
+            <li><?= $book['author'] ?></li>
+        <?php endforeach; ?>
+    </h1>
+</body>
+
+</html>
