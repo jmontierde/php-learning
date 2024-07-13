@@ -14,7 +14,7 @@
     $books = [
         [
             "author" => "A",
-            "name" => "Rich Dad Poor Dad",
+            "name" => "Rich Dad Poor Dads",
         ],
         [
             "author" => "C",
@@ -24,32 +24,33 @@
             "author" => "C",
             "name" => "Atomic Habit"
         ]
-
-
     ];
-
 
     function filterByAuthor($books, $author)
     {
         $filteredBooks = [];
 
         foreach ($books as $book) {
-            if ($book["author"] == $author) {
-
+            if ($book['author'] === $author) {
                 $filteredBooks[] = $book;
             }
         }
+
         return $filteredBooks;
     }
+
 
     ?>
 
 
     <h1>
         Hello World
-        <?php foreach (filterByAuthor($books, "A") as $book) : ?>
-            <?= $book['name'] ?>
-        <?php endforeach; ?>
+        <?php foreach (filterByAuthor($books, 'C') as $book) : ?>
+            <li>
+                <?= $book['name']; ?>
+            </li>
+        <?php endforeach ?>
+
     </h1>
 </body>
 
